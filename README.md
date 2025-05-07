@@ -27,14 +27,14 @@ This is a TensorFlow based implementation for our [paper on large-scale study of
     }
 
 ### Installation and Usage
-Follow instructions here to install MuJoCo:
+Follow instructions here to install MuJoCo 150 for Windows 64:
 https://github.com/openai/mujoco-py/blob/9ea9bb000d6b8551b99f9aa440862e0c7f7b4191/README.md
 
 Python packages:
 ```
 pip install gym==0.21.0
 pip install cython==0.28.1
-pip install baselines==0.1.5
+pip install baselines==0.1.5 # (this fails due to being unable to build wheel for mujoco-py)
 ```
 
 The following command should train a pure exploration agent on Breakout with default experiment parameters.
