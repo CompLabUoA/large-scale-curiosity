@@ -27,10 +27,21 @@ This is a TensorFlow based implementation for our [paper on large-scale study of
     }
 
 ### Installation and Usage
+Follow instructions here to install MuJoCo:
+https://github.com/openai/mujoco-py/blob/9ea9bb000d6b8551b99f9aa440862e0c7f7b4191/README.md
+
+Python packages:
+```
+pip install gym==0.21.0
+pip install cython==0.28.1
+pip install baselines==0.1.5
+```
+
 The following command should train a pure exploration agent on Breakout with default experiment parameters.
-```bash
+```
 python run.py
 ```
+
 To use more than one gpu/machine, use MPI (e.g. `mpiexec -n 8 python run.py` should use 1024 parallel environments to collect experience instead of the default 128 on an 8 gpu machine).
 
 ### Data for plots in paper
