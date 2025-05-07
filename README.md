@@ -26,11 +26,12 @@ This is a TensorFlow based implementation for our [paper on large-scale study of
         Year = {2018}
     }
 
-### Installation and Usage
+### Installation 
+**MuJoCo**
 Follow instructions here to install MuJoCo 150 for Windows 64:
 https://github.com/openai/mujoco-py/blob/9ea9bb000d6b8551b99f9aa440862e0c7f7b4191/README.md
 
-Then try
+Then try:
 ```
 pip install mujoco-py==1.50.1.68
 ```
@@ -40,12 +41,23 @@ If that doesn't work, try installing "manually":
 - cd to that directory
 - pip install ./mujoco-py-1.50.1.68.tar.gz
 
-Python packages:
+**MPI**
+Download from https://www.microsoft.com/en-us/download/details.aspx?id=105289
+
+**Python packages:**
 ```
-pip install gym==0.21.0
+pip install tensorflow==1.15.0
+pip install opencv==3.4.1.15
+pip install mpi4py==3.0.0
+pip install gym==0.15.7
 pip install cython==0.28.1
-pip install baselines==0.1.5 # (this fails due to being unable to build wheel for mujoco-py)
+pip install baselines==0.1.5 # (this requires first doing mujoco and mujoco-py steps ahead)
 ```
+
+**Atari support files**
+Follow instructions here: https://github.com/openai/atari-py?tab=readme-ov-file#roms (download this file anywhere, then unzip, then in a terminal run the command, replacing the <path to folder> with wherever you just downloaded to)
+
+### Usage
 
 The following command should train a pure exploration agent on Breakout with default experiment parameters.
 ```
