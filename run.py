@@ -4,6 +4,7 @@ try:
 except:
     print("no OpenGL.GLU")
 import functools
+import os 
 import os.path as osp
 from functools import partial
 
@@ -190,6 +191,8 @@ def add_rollout_params(parser):
 
 if __name__ == '__main__':
     import argparse
+
+    os.environ['CUDA_VISIBLE_DEVICES'] = '0' # added to fix issue https://github.com/openai/large-scale-curiosity/issues/9
 
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     add_environments_params(parser)
