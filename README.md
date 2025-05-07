@@ -30,6 +30,16 @@ This is a TensorFlow based implementation for our [paper on large-scale study of
 Follow instructions here to install MuJoCo 150 for Windows 64:
 https://github.com/openai/mujoco-py/blob/9ea9bb000d6b8551b99f9aa440862e0c7f7b4191/README.md
 
+Then try
+```
+pip install mujoco-py==1.50.1.68
+```
+
+If that doesn't work, try installing "manually":
+- download mujoco-py-1.50.1.68.tar.gz _from https://pypi.org/project/mujoco-py/1.50.1.68/#files and put in same location as MuJoCo above
+- cd to that directory
+- pip install ./mujoco-py-1.50.1.68.tar.gz
+
 Python packages:
 ```
 pip install gym==0.21.0
