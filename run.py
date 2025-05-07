@@ -11,7 +11,7 @@ from functools import partial
 import gym
 import tensorflow as tf
 from baselines import logger
-# from baselines.bench import Monitor
+from baselines.bench import Monitor
 from baselines.common.atari_wrappers import NoopResetEnv, FrameStack
 from mpi4py import MPI
 

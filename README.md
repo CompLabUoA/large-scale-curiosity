@@ -44,6 +44,12 @@ If that doesn't work, try installing "manually":
 **MPI**
 Download from https://www.microsoft.com/en-us/download/details.aspx?id=105289
 
+**CUDA drivers for GPU training**
+Download from: https://developer.nvidia.com/cuda-92-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
+
+**Atari support files**
+Follow instructions here: https://github.com/openai/atari-py?tab=readme-ov-file#roms (download this file anywhere, then unzip, then in a terminal run the command, replacing the <path to folder> with wherever you just downloaded to)
+
 **Python packages:**
 ```
 pip install tensorflow==1.15.0
@@ -53,9 +59,6 @@ pip install gym==0.15.7
 pip install cython==0.28.1
 pip install baselines==0.1.5 # (this requires first doing mujoco and mujoco-py steps ahead)
 ```
-
-**Atari support files**
-Follow instructions here: https://github.com/openai/atari-py?tab=readme-ov-file#roms (download this file anywhere, then unzip, then in a terminal run the command, replacing the <path to folder> with wherever you just downloaded to)
 
 ### Usage
 
