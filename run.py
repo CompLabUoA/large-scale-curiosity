@@ -142,7 +142,9 @@ def make_env_all_params(rank, add_monitor, args):
             env = make_robo_hockey()
 
     if add_monitor:
-        env = Monitor(env, osp.join(logger.get_dir(), '%.2i' % rank))
+        # env = Monitor(env, osp.join(logger.get_dir(), '%.2i' % rank))
+        env = Monitor(env, osp.join(logdir, '%.2i' % rank)) # attempt to avoid empty path error
+        
     return env
 
 
