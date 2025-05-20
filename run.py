@@ -8,6 +8,11 @@ import os
 import os.path as osp
 from functools import partial
 
+# KS: suppress tensorflow warnings:
+import logging
+logging.disable(logging.WARNING)
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3" 
+
 import gym
 import tensorflow as tf
 from baselines import logger
@@ -143,7 +148,8 @@ def make_env_all_params(rank, add_monitor, args):
 
     if add_monitor:
         # env = Monitor(env, osp.join(logger.get_dir(), '%.2i' % rank))
-        env = Monitor(env, osp.join(logdir, '%.2i' % rank)) # attempt to avoid empty path error
+        # KS: attempt to avoid None path error when expt hasn't started:
+        env = Monitor(env, None) # log file name is optional
         
     return env
 
@@ -187,7 +193,7 @@ def add_optimization_params(parser):
 def add_rollout_params(parser):
     parser.add_argument('--nsteps_per_seg', type=int, default=128)
     parser.add_argument('--nsegs_per_env', type=int, default=1)
-    parser.add_argument('--envs_per_process', type=int, default=128)
+    parser.add_argument('--envs_per_process', type=int, default=8) # default=128 KS: debugging multiprocessing errors
     parser.add_argument('--nlumps', type=int, default=1)
 
 
