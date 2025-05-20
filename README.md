@@ -44,7 +44,7 @@ If that doesn't work, try installing "manually":
 **MPI**
 Download from https://www.microsoft.com/en-us/download/details.aspx?id=105289
 
-**CUDA drivers for GPU training**
+**CUDA drivers for GPU training (not currently working)**
 Download from: https://developer.nvidia.com/cuda-92-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
 
 **Atari support files**
