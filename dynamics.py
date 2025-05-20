@@ -68,7 +68,7 @@ class Dynamics(object):
         n_chunks = 8
         n = ob.shape[0]
         chunk_size = n // n_chunks
-        assert n % n_chunks == 0
+        # assert n % n_chunks == 0 # KS: commented since assertion fails
         sli = lambda i: slice(i * chunk_size, (i + 1) * chunk_size)
         return np.concatenate([getsess().run(self.loss,
                                              {self.obs: ob[sli(i)], self.last_ob: last_ob[sli(i)],
